@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme="opus_purple"] {
+  --t-primary: #7c3aed;
+  --t-primary-hover: #8b5cf6;
+  --t-primary-soft: rgba(139, 92, 246, 0.2);
+  --t-primary-border: rgba(139, 92, 246, 0.45);
+  --t-accent: #facc15;
+  --t-bg-base: #07080c;
+  --t-bg-950: #07080c;
+  --t-bg-900: #0d0f17;
+  --t-bg-800: #1a1e2e;
+}
+
+[data-theme="cyber_cyan"] {
+  --t-primary: #0891b2;
+  --t-primary-hover: #06b6d4;
+  --t-primary-soft: rgba(6, 182, 212, 0.2);
+  --t-primary-border: rgba(6, 182, 212, 0.45);
+  --t-accent: #10b981;
+  --t-bg-base: #04090d;
+  --t-bg-950: #050b10;
+  --t-bg-900: #0a131c;
+  --t-bg-800: #132332;
+}
+
+[data-theme="crimson_orange"] {
+  --t-primary: #e11d48;
+  --t-primary-hover: #f43f5e;
+  --t-primary-soft: rgba(225, 29, 72, 0.2);
+  --t-primary-border: rgba(244, 63, 94, 0.45);
+  --t-accent: #f97316;
+  --t-bg-base: #0b0507;
+  --t-bg-950: #0d0609;
+  --t-bg-900: #170c10;
+  --t-bg-800: #29151d;
+}
+
+[data-theme="royal_blue"] {
+  --t-primary: #2563eb;
+  --t-primary-hover: #3b82f6;
+  --t-primary-soft: rgba(37, 99, 235, 0.2);
+  --t-primary-border: rgba(59, 130, 246, 0.45);
+  --t-accent: #38bdf8;
+  --t-bg-base: #050811;
+  --t-bg-950: #060a14;
+  --t-bg-900: #0c1324;
+  --t-bg-800: #172340;
+}
+
+[data-theme="matrix_emerald"] {
+  --t-primary: #16a34a;
+  --t-primary-hover: #22c55e;
+  --t-primary-soft: rgba(34, 197, 94, 0.2);
+  --t-primary-border: rgba(34, 197, 94, 0.45);
+  --t-accent: #a3e635;
+  --t-bg-base: #040a06;
+  --t-bg-950: #060d08;
+  --t-bg-900: #0b180f;
+  --t-bg-800: #152b1c;
+}
+
+[data-theme="gold_graphite"] {
+  --t-primary: #d97706;
+  --t-primary-hover: #f59e0b;
+  --t-primary-soft: rgba(245, 158, 11, 0.2);
+  --t-primary-border: rgba(245, 158, 11, 0.45);
+  --t-accent: #38bdf8;
+  --t-bg-base: #08080a;
+  --t-bg-950: #0a0a0c;
+  --t-bg-900: #121216;
+  --t-bg-800: #222228;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--t-bg-base);
+    color: #f1f5f9;
+  }
+}
+
+/* Override violet theme classes dynamically when a non-purple theme is selected */
+[data-theme]:not([data-theme="opus_purple"]) .bg-violet-600 {
+  background-color: var(--t-primary) !important;
+}
+[data-theme]:not([data-theme="opus_purple"]) .hover\:bg-violet-500:hover {
+  background-color: var(--t-primary-hover) !important;
+}
+[data-theme]:not([data-theme="opus_purple"]) .bg-violet-600\/25,
+[data-theme]:not([data-theme="opus_purple"]) .bg-violet-600\/20,
+[data-theme]:not([data-theme="opus_purple"]) .bg-violet-500\/20,
+[data-theme]:not([data-theme="opus_purple"]) .bg-violet-500\/15,
+[data-theme]:not([data-theme="opus_purple"]) .bg-violet-950\/35,
+[data-theme]:not([data-theme="opus_purple"]) .bg-violet-950\/30 {
+  background-color: var(--t-primary-soft) !important;
+}
+[data-theme]:not([data-theme="opus_purple"]) .border-violet-500,
+[data-theme]:not([data-theme="opus_purple"]) .border-violet-400,
+[data-theme]:not([data-theme="opus_purple"]) .border-violet-500\/40,
+[data-theme]:not([data-theme="opus_purple"]) .border-violet-500\/30 {
+  border-color: var(--t-primary-border) !important;
+}
+[data-theme]:not([data-theme="opus_purple"]) .text-violet-400,
+[data-theme]:not([data-theme="opus_purple"]) .text-violet-300 {
+  color: var(--t-primary-hover) !important;
+}
+[data-theme]:not([data-theme="opus_purple"]) .accent-violet-500 {
+  accent-color: var(--t-primary-hover) !important;
+}
+[data-theme]:not([data-theme="opus_purple"]) .from-violet-600 {
+  --tw-gradient-from: var(--t-primary) var(--tw-gradient-from-position) !important;
+}
+[data-theme]:not([data-theme="opus_purple"]) .to-indigo-600 {
+  --tw-gradient-to: var(--t-primary-hover) var(--tw-gradient-to-position) !important;
+}
+
+/* Custom sleek studio scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--t-bg-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262c42;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--t-primary);
+}

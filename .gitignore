@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local runtime database, API keys, uploaded videos & rendered exports
+data/
+*.mp4
+*.webm
+*.mp3
+*.wav
+
+# Environment & OS files
+.env
+.env.*
+.DS_Store
+Thumbs.db
+*.log
